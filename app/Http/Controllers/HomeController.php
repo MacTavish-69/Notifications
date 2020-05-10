@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('home')->with('notifications', $user->notifications);Heyyy
+        return view('home')->with('notifications', $user->notifications);
     }
 }
