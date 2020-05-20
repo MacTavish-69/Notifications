@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        // Registering command
+        Commands\SendEmail::class
     ];
 
     /**
@@ -24,8 +25,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
+//        This is useful when you deploy the app, in local environment you can call the command straight with its signature
+         $schedule->command('send:email')->daily();
     }
 
     /**
